@@ -1,0 +1,63 @@
+footer {
+
+    text-align: center;
+    color: #fff;
+    background: #f59866d2;
+    padding: 0.25em 0;
+  }
+  
+  .navbar-brand.accueil{
+      margin-left: 800px;
+      color: rgb(128, 6, 6);
+      font-weight: bold;
+  }
+  
+  .navbar-brand.accueil1{
+  
+      color: rgb(128, 6, 6);
+      font-weight: bold;
+  }
+  
+  /*body*/
+.img1{
+    width: 700px;
+}
+
+.container{
+    margin-bottom: 60px;
+    margin-top: 40px;
+}
+
+.test{
+    margin-top: 100px; 
+    text-align: center;
+    font-size: 25px;
+    font-style: italic;
+}
+
+.test1{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 25px;
+    font-style: italic;
+}
+
+.test2{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 25px;
+    font-style: italic;
+}
+
+.test3{
+    margin-right: -30px;
+    text-align: center;
+    font-size: 25px;
+    font-family: cursive;
+}
+
+.btn.btn-dark{
+    margin-top: 50px;
+    margin-left: 400px;
+}
+

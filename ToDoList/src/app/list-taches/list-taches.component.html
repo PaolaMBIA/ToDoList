@@ -1,0 +1,79 @@
+
+<h3 class="example">suivre l'avancement du projet </h3>
+<hr>
+
+<div class="list-container">
+  <div class="todo-container column-container">
+    <div class="list"
+         cdkDropList 
+         #todoList = "cdkDropList" 
+         [cdkDropListData] = "Tache" 
+         [cdkDropListConnectedTo] = "[progressList]" 
+         (cdkDropListDropped) = "onDrop($event) "> 
+      <h2>A faire</h2>
+      <mat-card *ngFor="let Tachess of Tache; let i = index" cdkDrag>
+        <mat-card-header>
+          <mat-card-title>{{Tachess.tache}}</mat-card-title>
+          <mat-card-subtitle>{{Tachess.description}}</mat-card-subtitle>
+        </mat-card-header>
+        <span class="edit" [routerLink]="['/edit-tasche/', Tachess._id]">
+            <button type="button" class="btn btn-success btn-sm">Modifier</button>
+          </span>
+          <span class="delete" (click)="removeTask(Tachess, i)">
+            <button type="button" class="btn btn-danger btn-sm">Supprimer</button>
+          </span>
+      </mat-card>
+    </div>
+  </div>
+  
+  <div class="inprogress-container column-container">
+    <div class="list"
+         cdkDropList 
+         #progressList = "cdkDropList" 
+         [cdkDropListData] = "encours" 
+         [cdkDropListConnectedTo] = "[doneList]" 
+         (cdkDropListDropped) = "onDrop($event) ">
+      <h2>En cours</h2>
+      <mat-card *ngFor="let encour of encours" cdkDrag>
+        <mat-card-header>
+          <mat-card-title>{{encour.tache}}</mat-card-title>
+          <mat-card-subtitle>{{encour.description}}</mat-card-subtitle>
+        </mat-card-header>
+        <span class="edit" [routerLink]="['/edit-tasche/', Tachess._id]">
+            <button type="button" class="btn btn-success btn-sm">Modifier</button>
+          </span>
+          <span class="delete" (click)="removeTask(Tachess, i)">
+            <button type="button" class="btn btn-danger btn-sm">Supprimer</button>
+          </span>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="done-container column-container">
+    <div class="list"
+         cdkDropList 
+         #doneList = "cdkDropList" 
+         [cdkDropListData] = "fait" 
+         [cdkDropListConnectedTo] = "[progressList]" 
+         (cdkDropListDropped) = "onDrop($event) ">
+      <h2>Fait</h2>
+      <mat-card *ngFor="let faits of fait" cdkDrag>
+        <mat-card-header>
+          <mat-card-title>{{faits.tache}}</mat-card-title>
+          <mat-card-subtitle>{{faits.description}}</mat-card-subtitle>
+        </mat-card-header>
+        <span class="edit" [routerLink]="['/create-taches/', Tachess._id]">
+            <button type="button" class="btn btn-success btn-sm">Modifier</button>
+          </span>
+          <span class="delete" (click)="removeTask(Tachess, i)">
+            <button type="button" class="btn btn-danger btn-sm">Supprimer</button>
+          </span>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <button type="button" class="btn btn-secondary btn-lg"><a routerLink="/create-taches">Ajouter une nouvelle tâche</a></button>
+</div>
+
